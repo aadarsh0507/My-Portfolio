@@ -137,7 +137,6 @@ const Home = () => {
       </section>
 
       {/* Skills Preview */}
-      This adds `mt-24 sm:mt-12` to the image, pushing it further down only on mobile. Adjust the `mt-24` value as needed.
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-950 dark:to-purple-950 z-10 relative">
         <div className="max-w-7xl mx-auto">
           <motion.div
