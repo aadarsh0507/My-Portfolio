@@ -32,7 +32,17 @@ const About = () => {
     "MongoDB",
     "MySQL",
     "Docker",
-    "AWS",
+    "AWS"
+  ];
+
+  const learningTools = [
+    "Terraform",
+    "Kubernetes",
+    "GitHub Actions",
+    "Jenkins",
+    "Prometheus",
+    "Grafana",
+    "Datadog"
   ];
 
   return (
@@ -61,59 +71,32 @@ const About = () => {
             👋 Hi there! I'm Aadarsh
           </h2>
           <p>
-            A passionate{" "}
-            <span className="text-blue-600 dark:text-blue-400 font-medium">
-              Full-Stack Developer
-            </span>{" "}
-            blending creativity, problem-solving, and technical skills. With
-            over 6 months of hands-on experience, I specialize in{" "}
-            <span className="text-green-600 dark:text-green-400">React.js</span>
-            ,{" "}
-            <span className="text-green-600 dark:text-green-400">Node.js</span>,
-            and backend systems like{" "}
-            <span className="text-pink-600 dark:text-pink-400">
-              Spring Boot
-            </span>{" "}
-            &{" "}
-            <span className="text-indigo-600 dark:text-indigo-400">
-              MongoDB
-            </span>
-            .
+            A passionate <span className="text-blue-600 dark:text-blue-400 font-medium">Full-Stack Developer</span> blending creativity, problem-solving, and technical skills. With over 6 months of hands-on experience, I specialize in <span className="text-green-600 dark:text-green-400">React.js</span>, <span className="text-green-600 dark:text-green-400">Node.js</span>, and backend systems like <span className="text-pink-600 dark:text-pink-400">Spring Boot</span> & <span className="text-indigo-600 dark:text-indigo-400">MongoDB</span>.
           </p>
           <p>
-            🎓{" "}
-            <span className="font-semibold text-gray-900 dark:text-white">
-              Education:
-            </span>
-            <br />
-            Bachelor of Engineering in Agriculture Engineering – SNS College of
-            Technology
-            <br />
+            My journey began with curiosity about how digital systems work, which evolved into a strong passion for developing reliable, scalable, and high-performing web applications. Whether it's frontend design or backend logic, I enjoy turning ideas into reality through clean and maintainable code.
           </p>
           <p>
-            💼{" "}
-            <span className="font-semibold text-gray-900 dark:text-white">
-              Experience:
-            </span>
-            <br />
-            Software Developer at Adhiparasakthi Hospitals
+            🎓 <span className="font-semibold text-gray-900 dark:text-white">Education:</span><br />
+            Bachelor of Engineering in Agriculture Engineering – SNS College of Technology
           </p>
           <p>
-            🏅{" "}
-            <span className="font-semibold text-gray-900 dark:text-white">
-              Certifications:
-            </span>
-            <br />
-            Full-Stack Development by Credo Systemz
-            <br />
-            GIT Certified by Kodekloud
-            <br />
-            Docker Certified by Kodekloud
+            💼 <span className="font-semibold text-gray-900 dark:text-white">Experience:</span><br />
+            Software Developer at Adhiparasakthi Hospitals where I’ve built multiple in-house applications for patient management, pathology barcode printing, and doctor counseling video recording platforms.
           </p>
           <p>
-            I aim to craft applications that not only solve real-world problems
-            but also offer seamless user experiences. My mission is to blend
-            technology with creativity to make impactful digital products.
+            🏅 <span className="font-semibold text-gray-900 dark:text-white">Certifications:</span><br />
+            Full-Stack Development by Credo Systemz<br />
+            GIT Certified by Kodekloud<br />
+            Docker Certified by Kodekloud<br />
+            Kubernetes & Terraform (Ongoing learning)
+          </p>
+          <p>
+            🚀 I aim to craft applications that not only solve real-world problems but also provide delightful user experiences. I am driven by a continuous learning mindset and enjoy exploring cloud infrastructure, CI/CD pipelines, and performance tuning.
+          </p>
+          <p>
+            🧠 <span className="font-semibold text-gray-900 dark:text-white">Currently Learning:</span><br />
+            {learningTools.join(", ")}
           </p>
         </motion.div>
 
@@ -122,16 +105,19 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="flex flex-wrap gap-3 mt-8 justify-center"
+          className="mt-12"
         >
-          {skills.map((skill) => (
-            <span
-              key={skill}
-              className="px-4 py-2 bg-purple-600 dark:bg-purple-700 text-white rounded-full shadow hover:scale-105 transition transform duration-300 cursor-default"
-            >
-              {skill}
-            </span>
-          ))}
+          <h3 className="text-2xl font-bold text-center mb-4"> Skills</h3>
+          <div className="flex flex-wrap gap-3 justify-center">
+            {skills.map((skill) => (
+              <span
+                key={skill}
+                className="px-4 py-2 bg-purple-600 dark:bg-purple-700 text-white rounded-full shadow hover:scale-105 transition transform duration-300 cursor-default"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
         </motion.div>
 
         {/* Interests Section */}
