@@ -38,17 +38,16 @@ const Home = () => {
         >
           <motion.div
             variants={itemVariants}
-            className="mb-8 flex justify-center"
+            className="mb-6 sm:mb-8 flex justify-center"
           >
             <div className="relative group">
               <img
                 src={profileImage}
                 alt="Profile"
-                className="mt-12 w-38 h-38 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full mx-auto mb-6 border-4 border-white dark:border-gray-700 shadow-2xl group-hover:scale-105 transition-transform duration-300"
+                className="w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-full mx-auto border-4 border-white dark:border-gray-700 shadow-2xl group-hover:scale-105 transition-transform duration-300"
                 style={{ boxShadow: "0 8px 32px 0 rgba(99,102,241,0.15)" }}
               />
-
-              <span className="absolute bottom-2 right-2 bg-gradient-to-r from-primary-600 to-purple-500 text-white text-xs px-2 py-1 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-md">
+              <span className="absolute bottom-2 right-2 bg-gradient-to-r from-primary-600 to-purple-500 text-white text-xs px-2 py-0.5 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-md">
                 👋 Hello!
               </span>
             </div>
@@ -56,7 +55,7 @@ const Home = () => {
 
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white mb-6 drop-shadow-lg"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 sm:mb-6 drop-shadow-lg"
           >
             Hi, I'm{" "}
             <span className="bg-gradient-to-r from-primary-600 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient-x">
@@ -66,7 +65,7 @@ const Home = () => {
 
           <motion.p
             variants={itemVariants}
-            className="text-xl md:text-2xl text-gray-700 dark:text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed px-4"
           >
             <span className="inline-block bg-white/70 dark:bg-gray-900/60 px-4 py-2 rounded-xl shadow-sm backdrop-blur-md border border-primary-100 dark:border-primary-900">
               A results-driven{" "}
@@ -104,7 +103,7 @@ const Home = () => {
 
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10 sm:mb-12"
           >
             <Link
               to="/projects"

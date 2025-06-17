@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center transition-all duration-200 ease-in-out;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center transition-all duration-200 ease-in-out;
+  }
+}
