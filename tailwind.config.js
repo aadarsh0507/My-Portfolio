@@ -36,6 +36,17 @@ export default {
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
       },
+      screens: {
+        'xs': '375px',
+      },
+      spacing: {
+        '128': '32rem',
+        '18': '4.5rem',
+        '22': '5.5rem',
+      },
+      borderWidth: {
+        '3': '3px',
+      },
     },
   },
   plugins: [],
