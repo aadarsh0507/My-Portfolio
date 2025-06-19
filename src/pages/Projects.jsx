@@ -74,7 +74,7 @@ const Projects = () => {
       description:
         "A full-stack web application built for pathology labs to efficiently generate barcode labels for patient samples. The system is integrated with a third-party Hospital Information System (HIS) using MS SQL to fetch real-time patient data using their UHID (Unique Hospital ID).",
       image: "/path-label.PNG",
-      techStack: ["Next.js", "MongoDB", "Tailwind CSS"],
+      techStack: ["React.js", "MongoDB", "Tailwind CSS"],
       category: "fullstack",
       liveUrl: "https://pathologylabel.netlify.app/",
       githubUrl: "https://github.com/aadarsh0507/pathology.git",
