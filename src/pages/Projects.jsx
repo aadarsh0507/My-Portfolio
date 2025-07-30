@@ -107,8 +107,16 @@ const Projects = () => {
       : demoProjects.filter((project) => project.category === filter);
 
   return (
-    <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-white to-purple-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-100 via-blue-100 to-purple-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen relative overflow-hidden">
+      {/* Background Animation */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-green-300 to-emerald-300 dark:from-green-800 dark:to-emerald-800 opacity-40 dark:opacity-20 rounded-full blur-xl animate-float" />
+        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-blue-300 to-indigo-300 dark:from-blue-800 dark:to-indigo-800 opacity-35 dark:opacity-20 rounded-full blur-lg animate-float" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-20 left-1/4 w-28 h-28 bg-gradient-to-br from-purple-300 to-pink-300 dark:from-purple-800 dark:to-pink-800 opacity-30 dark:opacity-20 rounded-full blur-lg animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-40 right-1/3 w-20 h-20 bg-gradient-to-br from-cyan-300 to-blue-300 dark:hidden opacity-25 rounded-full blur-md animate-float" style={{ animationDelay: '1.5s' }} />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -136,8 +144,8 @@ const Projects = () => {
               onClick={() => setFilter(category.id)}
               className={`px-6 py-2 rounded-full font-medium shadow transition-colors border-2 ${
                 filter === category.id
-                  ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white border-transparent scale-105"
-                  : "bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-600 hover:bg-purple-100 dark:hover:bg-purple-900"
+                  ? "bg-gradient-to-r from-green-500 to-blue-500 text-white border-transparent scale-105"
+                  : "bg-white/90 dark:bg-gray-700/90 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-600 hover:bg-green-100 dark:hover:bg-green-900 backdrop-blur-sm"
               }`}
             >
               {category.name}
@@ -154,7 +162,7 @@ const Projects = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 + index * 0.08 }}
               whileHover={{ y: -8, scale: 1.03 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700"
+              className="bg-white/90 dark:bg-gray-800/90 rounded-xl shadow-lg hover:shadow-2xl transition-all overflow-hidden border border-white/20 dark:border-gray-700/20 backdrop-blur-sm"
             >
               <div className="relative group">
                 <img
@@ -185,7 +193,7 @@ const Projects = () => {
                   )}
                 </div>
                 {project.featured && (
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow">
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-green-500 to-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow">
                     Featured
                   </div>
                 )}
@@ -200,28 +208,28 @@ const Projects = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.techStack?.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-purple-900 dark:to-blue-900 text-primary-700 dark:text-primary-300 rounded text-xs font-medium border border-purple-200 dark:border-purple-800"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                                     {project.techStack?.map((tech) => (
+                     <span
+                       key={tech}
+                       className="px-2 py-1 bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900 dark:to-blue-900 text-green-700 dark:text-green-300 rounded text-xs font-medium border border-green-200 dark:border-green-800"
+                     >
+                       {tech}
+                     </span>
+                   ))}
                 </div>
 
                 <div className="flex space-x-4">
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium"
-                    >
-                      <Eye size={16} className="mr-1" />
-                      Live Demo
-                    </a>
-                  )}
+                                     {project.liveUrl && (
+                     <a
+                       href={project.liveUrl}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="flex items-center text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 font-medium"
+                     >
+                       <Eye size={16} className="mr-1" />
+                       Live Demo
+                     </a>
+                   )}
                   {project.githubUrl && (
                     <a
                       href={project.githubUrl}

@@ -20,16 +20,22 @@ const Home = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-gray-50 via-white to-purple-100 dark:from-gray-900 dark:via-gray-950 dark:to-purple-950 transition-colors duration-500">
-      {/* Animated Background Blobs */}
+    <div className="relative min-h-screen bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 dark:from-gray-900 dark:via-gray-950 dark:to-purple-950 transition-colors duration-500 overflow-hidden">
+      {/* Enhanced Animated Background */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[400px] h-[400px] bg-purple-300 dark:bg-purple-900 opacity-30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[350px] h-[350px] bg-primary-200 dark:bg-primary-900 opacity-20 rounded-full blur-2xl animate-pulse" />
-        <div className="absolute top-1/2 left-1/2 w-[250px] h-[250px] bg-pink-200 dark:bg-pink-900 opacity-20 rounded-full blur-2xl animate-pulse" />
+        {/* Light theme background elements */}
+        <div className="absolute top-[-10%] left-[-10%] w-[400px] h-[400px] bg-gradient-to-br from-blue-300 to-purple-300 dark:from-purple-900 dark:to-purple-900 opacity-60 dark:opacity-30 rounded-full blur-3xl animate-pulse floating-element" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[350px] h-[350px] bg-gradient-to-br from-indigo-300 to-pink-300 dark:from-primary-900 dark:to-primary-900 opacity-50 dark:opacity-20 rounded-full blur-2xl animate-pulse floating-element" />
+        <div className="absolute top-1/2 left-1/2 w-[250px] h-[250px] bg-gradient-to-br from-pink-300 to-rose-300 dark:from-pink-900 dark:to-pink-900 opacity-45 dark:opacity-20 rounded-full blur-2xl animate-pulse floating-element" />
+        
+        {/* Additional light theme decorative elements */}
+        <div className="absolute top-1/4 right-1/4 w-[150px] h-[150px] bg-gradient-to-br from-cyan-300 to-blue-300 dark:hidden opacity-40 rounded-full blur-xl animate-float" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute bottom-1/4 left-1/3 w-[120px] h-[120px] bg-gradient-to-br from-emerald-300 to-teal-300 dark:hidden opacity-35 rounded-full blur-lg animate-float" style={{ animationDelay: '2.5s' }} />
+        <div className="absolute top-3/4 right-1/3 w-[100px] h-[100px] bg-gradient-to-br from-violet-300 to-purple-300 dark:hidden opacity-35 rounded-full blur-lg animate-float" style={{ animationDelay: '3s' }} />
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 z-10">
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 z-10 pt-20">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -41,14 +47,21 @@ const Home = () => {
             className="mb-8 flex justify-center"
           >
             <div className="relative group">
-              <img
-                src={profileImage}
-                alt="Profile"
-                className="mt-24 sm:mt-12 w-24 h-24 xs:w-32 xs:h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full mx-auto mb-6 border-4 border-white dark:border-gray-700 shadow-2xl group-hover:scale-105 transition-transform duration-300 object-cover bg-gray-200 dark:bg-gray-800"
-                style={{ boxShadow: "0 8px 32px 0 rgba(99,102,241,0.15)" }}
-              />
+              <div className="relative">
+                <img
+                  src={profileImage}
+                  alt="Profile"
+                  className="w-24 h-24 xs:w-32 xs:h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full mx-auto mb-6 border-4 border-white dark:border-gray-700 shadow-2xl group-hover:scale-105 transition-transform duration-300 object-cover bg-gray-200 dark:bg-gray-800 hover:shadow-3xl"
+                  style={{ 
+                    boxShadow: "0 8px 32px 0 rgba(99,102,241,0.15)",
+                    filter: "drop-shadow(0 10px 20px rgba(99,102,241,0.2))"
+                  }}
+                />
+                {/* Glow effect behind the image */}
+                <div className="absolute inset-0 w-24 h-24 xs:w-32 xs:h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full bg-gradient-to-r from-primary-400 to-purple-400 opacity-20 blur-xl -z-10 group-hover:opacity-30 transition-opacity duration-300"></div>
+              </div>
 
-              <span className="absolute bottom-2 right-2 bg-gradient-to-r from-primary-600 to-purple-500 text-white text-xs px-2 py-1 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-md">
+              <span className="absolute bottom-2 right-2 bg-gradient-to-r from-primary-600 to-purple-500 text-white text-xs px-2 py-1 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-md animate-pulse">
                 👋 Hello!
               </span>
             </div>
@@ -137,7 +150,7 @@ const Home = () => {
       </section>
 
       {/* Skills Preview */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-950 dark:to-purple-950 z-10 relative">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 dark:from-gray-900 dark:via-gray-950 dark:to-purple-950 z-10 relative">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -187,7 +200,7 @@ const Home = () => {
                   scale: 1.08,
                   boxShadow: "0 8px 32px 0 rgba(99,102,241,0.2)",
                 }}
-                className="bg-white/80 dark:bg-gray-800/70 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all text-center border-2 border-transparent hover:border-primary-400 dark:hover:border-primary-600 backdrop-blur-md"
+                className="bg-white/90 dark:bg-gray-800/70 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all text-center border-2 border-transparent hover:border-primary-400 dark:hover:border-primary-600 backdrop-blur-md bg-gradient-to-br from-white/95 to-blue-50/50 dark:from-gray-800/70 dark:to-gray-800/70"
               >
                 <div className="text-3xl font-extrabold text-primary-600 dark:text-primary-400 mb-2 tracking-widest drop-shadow">
                   {tech.slice(0, 2).toUpperCase()}
@@ -202,7 +215,7 @@ const Home = () => {
       </section>
 
       {/* AI Tools Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 via-white to-primary-50 dark:from-purple-950 dark:via-gray-950 dark:to-primary-950 z-10 relative">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-100 via-pink-100 to-indigo-100 dark:from-purple-950 dark:via-gray-950 dark:to-primary-950 z-10 relative">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -242,7 +255,7 @@ const Home = () => {
                   scale: 1.08,
                   boxShadow: "0 8px 32px 0 rgba(168,85,247,0.15)",
                 }}
-                className="flex flex-col items-center justify-center bg-white/80 dark:bg-gray-800/70 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all min-h-[120px] border-2 border-transparent hover:border-purple-400 dark:hover:border-purple-600 backdrop-blur-md"
+                className="flex flex-col items-center justify-center bg-white/90 dark:bg-gray-800/70 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all min-h-[120px] border-2 border-transparent hover:border-purple-400 dark:hover:border-purple-600 backdrop-blur-md bg-gradient-to-br from-white/95 to-purple-50/50 dark:from-gray-800/70 dark:to-gray-800/70"
               >
                 <div className="text-xl font-extrabold text-purple-600 dark:text-purple-400 mb-2 text-center tracking-wide drop-shadow">
                   {tool.split(" ")[0]}
